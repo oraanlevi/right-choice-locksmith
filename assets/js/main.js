@@ -1,5 +1,5 @@
 /* ============================================
-   RIGHT CHOICE LOCKSMITH — Main JavaScript
+   RIGHT CHOICE LOCKSMITH, Main JavaScript
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -87,23 +87,5 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.1 });
   reveals.forEach(el => revealObserver.observe(el));
 
-  /* ---- CONTACT FORM ---- */
-  const form = document.getElementById('contactForm');
-  form?.addEventListener('submit', e => {
-    e.preventDefault();
-    const btn = form.querySelector('.form-submit');
-    btn.textContent = 'Sending...';
-    btn.disabled = true;
-    setTimeout(() => {
-      btn.textContent = '✓ Message Sent — We\'ll Call You Shortly!';
-      btn.style.background = 'linear-gradient(135deg, #007a40, #00a855)';
-      form.reset();
-      setTimeout(() => {
-        btn.textContent = 'Send Message';
-        btn.style.background = '';
-        btn.disabled = false;
-      }, 4000);
-    }, 1200);
-  });
 
 });
