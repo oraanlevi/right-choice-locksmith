@@ -93,6 +93,19 @@ button { cursor: pointer; font-family: inherit; border: none; }
 }
 .btn-primary:hover { filter: brightness(1.12); transform: translateY(-2px); }
 
+.btn-emergency {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  font-size: 15px; letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 14px 28px; border: 2px solid #ff3b3b;
+  background: rgba(255, 59, 59, 0.12);
+  color: #ff3b3b;
+  margin-top: 12px;
+  transition: background 0.2s, transform 0.2s;
+  clip-path: polygon(12px 0%, 100% 0%, calc(100% - 12px) 100%, 0% 100%);
+}
+.btn-emergency:hover { background: rgba(255, 59, 59, 0.25); transform: translateY(-2px); }
+
 .btn-secondary {
   display: inline-flex; align-items: center; gap: 8px;
   font-family: 'Rajdhani', sans-serif; font-weight: 600;
