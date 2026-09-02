@@ -171,6 +171,42 @@ button { cursor: pointer; font-family: inherit; border: none; }
 .hamburger span { display: block; width: 24px; height: 2px; background: var(--silver); border-radius: 2px; transition: all 0.3s; }
 
 /* ============================================
+   DESKTOP DROPDOWN NAV
+   ============================================ */
+.nav-dropdown { position: relative; }
+.nav-drop-btn {
+  font-family: 'Rajdhani', sans-serif; font-size: 13px; font-weight: 600;
+  letter-spacing: 1.5px; text-transform: uppercase; color: var(--steel);
+  background: none; border: none; cursor: pointer; padding: 0;
+  display: flex; align-items: center; gap: 5px;
+  transition: color 0.2s;
+}
+.nav-drop-btn:hover,
+.nav-dropdown[data-open] .nav-drop-btn { color: var(--green); }
+.drop-caret { font-size: 9px; display: inline-block; transition: transform 0.2s; line-height: 1; }
+.nav-dropdown:hover .drop-caret,
+.nav-dropdown[data-open] .drop-caret { transform: rotate(180deg); }
+
+.nav-drop-panel {
+  display: none; position: absolute; top: calc(100% + 14px); left: 0;
+  background: rgba(5,12,18,0.97); backdrop-filter: blur(16px);
+  border: 1px solid rgba(0,232,122,0.15); border-radius: 4px;
+  min-width: 210px; padding: 6px 0; z-index: 1001;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+.nav-dropdown:hover .nav-drop-panel,
+.nav-dropdown[data-open] .nav-drop-panel { display: block; }
+.nav-drop-panel a {
+  display: block; padding: 9px 16px;
+  font-family: 'Rajdhani', sans-serif; font-size: 12px; font-weight: 600;
+  letter-spacing: 1px; text-transform: uppercase; color: var(--steel);
+  transition: color 0.15s, background 0.15s; white-space: nowrap;
+  border-bottom: none; padding-bottom: 9px;
+}
+.nav-drop-panel a::after { display: none !important; }
+.nav-drop-panel a:hover { color: var(--green); background: rgba(0,232,122,0.06); }
+
+/* ============================================
    HERO
    ============================================ */
 .hero {
@@ -702,6 +738,34 @@ button { cursor: pointer; font-family: inherit; border: none; }
   transition: color 0.2s;
 }
 .mobile-menu a:hover { color: var(--green); }
+
+/* ---- MOBILE ACCORDION ---- */
+.mob-accord { display: flex; flex-direction: column; }
+.mob-accord-btn {
+  font-family: 'Exo 2', sans-serif; font-size: 28px; font-weight: 800;
+  text-transform: uppercase; letter-spacing: 1px; color: var(--silver-bright);
+  background: none; border: none; cursor: pointer; text-align: left;
+  padding: 0 0 18px 0; display: flex; align-items: center; justify-content: space-between;
+  border-bottom: 1px solid rgba(74,122,155,0.15);
+  transition: color 0.2s; width: 100%;
+}
+.mob-accord-btn:hover { color: var(--green); }
+.mob-accord-caret { font-size: 14px; display: inline-block; transition: transform 0.2s; flex-shrink: 0; }
+.mob-accord-btn[aria-expanded="true"] .mob-accord-caret { transform: rotate(180deg); }
+
+.mob-accord-panel {
+  display: none; flex-direction: column; gap: 0;
+  padding: 8px 0 4px 12px;
+  border-bottom: 1px solid rgba(74,122,155,0.15);
+}
+.mob-accord-panel.open { display: flex; }
+.mob-accord-panel a {
+  font-family: 'Exo 2', sans-serif; font-size: 18px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.5px; color: var(--steel);
+  padding: 10px 0; border-bottom: none;
+  transition: color 0.2s;
+}
+.mob-accord-panel a:hover { color: var(--green); }
 
 /* ============================================
    RESPONSIVE
