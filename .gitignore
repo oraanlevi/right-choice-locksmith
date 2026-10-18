@@ -1,0 +1,20 @@
+# Client photo drop folder: raw photos must never be committed (public repo)
+client-uploads/*
+!client-uploads/README.md
+
+# Raw phone photos anywhere (existing tracked files are unaffected)
+*.heic
+*.HEIC
+*.heif
+*.HEIF
+
+# Client documents and audit findings: keep local, never in the public repo
+maintenance/backlog.md
+maintenance/check-baseline.txt
+
+# Local / system files
+.DS_Store
+__pycache__/
+.env
+.env.*
+*.log

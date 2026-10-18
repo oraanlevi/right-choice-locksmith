@@ -1,0 +1,29 @@
+{
+  "site_name": "Right Choice Locksmith",
+  "domain": "https://rightchoicelocksmithdallas.com",
+  "canonical_entity_id": "https://rightchoicelocksmithdallas.com/#locksmith",
+  "home_locality": "Dallas",
+  "phone_tel": "+14696406420",
+  "html_globs": ["index.html", "pages/*.html", "pages/blog/*.html", "privacy/index.html"],
+  "blog_glob": "pages/blog/*.html",
+  "sitemap_file": "sitemap.xml",
+  "sitemap_exclude": ["pages/privacy.html", "pages/sitemap.html", "privacy/index.html"],
+  "image_dirs": ["assets/images"],
+  "image_budget_kb": 400,
+  "photo_output_widths": [480, 960, 1600],
+  "photo_service_area": {
+    "label": "Dallas-Fort Worth",
+    "lat_min": 32.3, "lat_max": 33.6,
+    "lon_min": -97.7, "lon_max": -96.2
+  },
+  "claims_to_verify": [
+    "\\b\\d{2,}\\+\\s*(5-star\\s*)?reviews\\b",
+    "\\b\\d{2,}\\+\\s*verified\\b",
+    "guarantee",
+    "\\bmost trusted\\b",
+    "\\b#1\\b",
+    "\\bbest in\\b",
+    "\\bcheapest\\b",
+    "\\$\\s?\\d+"
+  ]
+}

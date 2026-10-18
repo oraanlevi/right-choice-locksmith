@@ -1,0 +1,6 @@
+# Keep maintenance tooling and client uploads off the live website.
+CLAUDE.md
+.claude
+maintenance
+client-uploads
+.gitignore
