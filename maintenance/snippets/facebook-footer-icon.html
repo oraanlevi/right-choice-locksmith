@@ -1,0 +1,11 @@
+<!--
+Facebook footer icon: hidden until the owner confirms the official Facebook page URL.
+To restore it (ask Claude: "add the Facebook icon, URL is ..."):
+  1. Replace FACEBOOK_URL below with the confirmed page URL.
+     Careful: "The Right Choice Locksmith" (therightchoicelocksmith.com, The Colony/McKinney) is a DIFFERENT business.
+  2. Insert the <a> as the FIRST child of every <div class="footer-social"> (24 served pages:
+     index.html, pages/*.html except pages/privacy.html, pages/blog/*.html, privacy/index.html).
+  3. Add the same URL to "sameAs" in the homepage Locksmith JSON-LD, and to the Business facts table in CLAUDE.md.
+  4. Run python3 maintenance/scripts/check_site.py --quiet. Styling already exists (.footer-social-link in style.css).
+-->
+<a href="FACEBOOK_URL" class="footer-social-link" target="_blank" rel="noopener" aria-label="Right Choice Locksmith on Facebook"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M13.5 21.9v-8.2h2.8l.4-3.2h-3.2V8.4c0-.9.3-1.6 1.6-1.6h1.7V4c-.3 0-1.3-.1-2.5-.1-2.5 0-4.2 1.5-4.2 4.3v2.4H7.3v3.2h2.8v8.2h3.4z"/></svg></a>

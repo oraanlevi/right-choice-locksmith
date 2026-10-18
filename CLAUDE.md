@@ -11,6 +11,13 @@ This repo is the live marketing site for **Right Choice Locksmith** (Dallas-Fort
 5. **Change only what was asked.** Don't "improve" unrelated content. Note anything else you notice under "Also noticed" in the summary.
 6. **Every change ends with:** the site check, a local preview link, and the change summary (see *Change workflow*). Then stop and wait.
 
+## Task board (start of every session)
+
+- Client requests, audit items, missing info and deploy states live in **`maintenance/private/TASKS.md`**. The client's messages are logged in `maintenance/private/client-log.md`. Both are **private**: git-ignored, never deployed, never quoted in commits or public files.
+- A SessionStart hook (`maintenance/hooks/session_brief.py`) adds a brief from the board at the start of each session. Open the session with a 2–4 line summary: the next task, what awaits the user's review or publish, and the key blockers. If the brief is missing, read `TASKS.md` yourself.
+- "Work on the next task" → `/next-task`. New client message, answers or photos → `/client-update`. "Where are we?" → `/site-tasks`.
+- After **any** website change, even an ad-hoc request, update the matching task (or add one): status, missing info, files changed, deploy state, and a change-history row.
+
 ## Business facts (source of truth)
 
 | Fact | Value |
@@ -21,13 +28,15 @@ This repo is the live marketing site for **Right Choice Locksmith** (Dallas-Fort
 | Email | rightchoicelocksmithdallas@gmail.com |
 | License | TX DPS Lic # B31212401 · Bonded · Insured |
 | Hours | 24/7 (`openingHours: "Mo-Su 00:00-23:59"`) |
-| Address | No public street address. Service-area business based in Dallas, TX |
+| Address | No street address on the website (service-area business based in Dallas, TX). Don't add an address to pages or schema without the owner's explicit confirmation |
 | Canonical schema entity | `https://rightchoicelocksmithdallas.com/#locksmith` |
 | Services (pages) | Residential, Commercial, Automotive, Emergency, Rekey, Lock Change & Replacement, Car Key Replacement, Key Fob Programming |
 | City pages today | Dallas, Fort Worth, Plano, Allen, Frisco, Irving |
-| Facebook URL | *not provided yet. Ask the owner.* |
-| Google Business Profile URL | *not provided yet. Ask the owner.* |
-| Google "write a review" URL | *not provided yet. Ask the owner.* |
+| Facebook URL | *Pending from the owner.* The footer icon is hidden until then; restore it from `maintenance/snippets/facebook-footer-icon.html`. Not "The Right Choice Locksmith" (a different business) |
+| Google Business Profile | "Right Choice Locksmith Dallas", place ID `ChIJj2cBRwpTg0URThxHDmgD2a0`, CID `12527047583958768718` (verified Oct 18, 2026: phone and website match) |
+| Google reviews link (site buttons/icons) | https://search.google.com/local/reviews?placeid=ChIJj2cBRwpTg0URThxHDmgD2a0 |
+| Google profile `sameAs` | https://maps.google.com/?cid=12527047583958768718 |
+| Google "write a review" URL | https://search.google.com/local/writereview?placeid=ChIJj2cBRwpTg0URThxHDmgD2a0 (pattern, not yet used on the site) |
 
 When the owner gives a new fact (hours, a social URL, a new service), update this table in the same change.
 
@@ -117,6 +126,7 @@ Don't add or change these without the owner's confirmation: review counts or rat
    - **Preview:** local URLs to look at.
    - **Also noticed:** anything else you saw but didn't change.
    - **Next step:** "Reply *approve* to commit, or tell me what to adjust." Then **stop**.
+   - Before stopping, update `maintenance/private/TASKS.md` (status, files changed, deploy state `local only`).
 7. **Only after approval:** use the `prepare-deploy` skill, which commits, and then pushes only after a *second*, separate approval.
 
 ## Skills (slash commands) in this project
@@ -130,6 +140,9 @@ Don't add or change these without the owner's confirmation: review counts or rat
 | `/google-reviews` | Update review links, featured reviews, review-request text |
 | `/site-check` | Run the full maintenance check and explain the results |
 | `/prepare-deploy` | Review all local changes, commit after approval, push after a second approval |
+| `/next-task` | Pick the next unblocked task from the board, implement locally, check, report |
+| `/client-update` | Log a client message, answers or photos, and update the task board |
+| `/site-tasks` | Board status: next, awaiting review, blocked, questions for the client |
 
 ## Reference
 

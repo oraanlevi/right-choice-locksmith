@@ -11,6 +11,10 @@ Open this folder in Claude Code (the desktop app or `claude` in a terminal) and 
 5. **It stops.** Nothing is committed, pushed or published until you say so.
 6. When you're happy, type `/prepare-deploy`. It reviews everything and asks **"Approve commit?"**, then separately **"Push to GitHub? This publishes the live site."**
 
+## Task board (private)
+
+Client requests, missing info and deploy status are tracked in `maintenance/private/TASKS.md`, and the client's messages are logged in `maintenance/private/client-log.md`. Both are git-ignored and never deployed. Each Claude Code session starts with a short brief from the board (SessionStart hook `maintenance/hooks/session_brief.py`).
+
 ## Built-in safety
 
 - `.claude/settings.json` plus `maintenance/hooks/approval_gate.py` make Claude Code ask you before any `git commit`, `git push`, merge/reset, `vercel` or `gh` command, even in auto mode. Force-push is blocked outright.
@@ -28,6 +32,9 @@ Open this folder in Claude Code (the desktop app or `claude` in a terminal) and 
 | `/google-reviews` | Review links, featured reviews, review-request wording |
 | `/site-check` | Full health check, explained in plain English |
 | `/prepare-deploy` | Review, then commit (approval 1), then publish (approval 2) |
+| `/next-task` | Do the next unblocked task from the board, locally, with checks and a report |
+| `/client-update` | Add a client message, answers or photos to the task board |
+| `/site-tasks` | Where things stand: next, awaiting review, blocked, questions for the client |
 
 You don't have to use the commands. Plain requests work too, and Claude picks the right skill.
 
@@ -43,6 +50,8 @@ You don't have to use the commands. Plain requests work too, and Claude picks th
 | `maintenance/scripts/check_site.py` | Read-only site check |
 | `maintenance/scripts/process_photos.py` | Photo cleaning and resizing (Python 3 + Pillow) |
 | `maintenance/check-baseline.txt` | Known pre-existing issues, so checks show only new ones (local only, git-ignored) |
+| `maintenance/private/` | Task board and client log (local only, git-ignored) |
+| `maintenance/snippets/` | Ready-made markup to restore later (e.g. the Facebook icon) |
 | `maintenance/backlog.md` | Known issues from audits (local only, git-ignored: it's a client document) |
 
 ## Reusing this for another client

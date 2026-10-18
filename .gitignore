@@ -9,6 +9,7 @@ client-uploads/*
 *.HEIF
 
 # Client documents and audit findings: keep local, never in the public repo
+maintenance/private/
 maintenance/backlog.md
 maintenance/check-baseline.txt
 

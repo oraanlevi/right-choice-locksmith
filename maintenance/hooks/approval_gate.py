@@ -44,6 +44,8 @@ TRUSTED = {os.path.join("maintenance", "scripts", n) for n in ("check_site.py", 
 def decide(cmd, depth=0):
     """Return (decision, reason) or None."""
     has_git = re.search(r"\bgit\b", cmd, I)
+    if has_git and re.search(r"\badd\b", cmd, I) and re.search(r"(\s-f\b|--force|maintenance/private|client-uploads|backlog\.md|check-baseline)", cmd, I):
+        return "deny", "Private client notes, uploads and ignored files must never be added to git (public repo)."
     for p in FORCE:
         if has_git and re.search(p, cmd, I):
             return "deny", "Force-push / mirror / remote delete is never allowed on this site."

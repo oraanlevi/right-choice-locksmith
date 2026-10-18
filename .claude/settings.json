@@ -53,6 +53,16 @@
           }
         ]
       }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"$CLAUDE_PROJECT_DIR/maintenance/hooks/session_brief.py\""
+          }
+        ]
+      }
     ]
   }
 }
