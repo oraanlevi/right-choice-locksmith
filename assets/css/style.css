@@ -721,6 +721,16 @@ button { cursor: pointer; font-family: inherit; border: none; }
   font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700;
   letter-spacing: 1.5px; text-transform: uppercase; color: rgba(0,232,122,0.4);
 }
+/* Footer social icons */
+.footer-social { display: flex; align-items: center; gap: 10px; }
+.footer-social-link {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 34px; height: 34px; color: var(--silver);
+  border: 1px solid rgba(0,232,122,0.25); transition: color 0.2s, border-color 0.2s;
+}
+.footer-social-link:hover, .footer-social-link:focus-visible { color: var(--green); border-color: var(--green); }
+.footer-social-link svg { width: 16px; height: 16px; fill: currentColor; }
+.reviews-google-btn svg { width: 16px; height: 16px; fill: currentColor; flex-shrink: 0; }
 
 /* ============================================
    MOBILE NAV MENU
