@@ -704,6 +704,14 @@ button { cursor: pointer; font-family: inherit; border: none; }
   letter-spacing: 1px; color: var(--green); transition: color 0.2s;
 }
 .footer-contact a:hover { color: var(--ice); }
+.footer-mailing {
+  font-style: normal; font-family: 'Rajdhani', sans-serif; font-size: 14px; font-weight: 600;
+  letter-spacing: 1px; color: rgba(184,207,224,0.75);
+}
+.footer-address {
+  flex-basis: 100%; font-style: normal; font-size: 11px; letter-spacing: 0.5px;
+  color: rgba(184,207,224,0.65);
+}
 .footer-col-title {
   font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700;
   letter-spacing: 3px; text-transform: uppercase; color: var(--green);

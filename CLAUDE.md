@@ -28,7 +28,7 @@ This repo is the live marketing site for **Right Choice Locksmith** (Dallas-Fort
 | Email | rightchoicelocksmithdallas@gmail.com |
 | License | TX DPS Lic # B31212401 · Bonded · Insured |
 | Hours | 24/7 (`openingHours: "Mo-Su 00:00-23:59"`) |
-| Address | No street address on the website (service-area business based in Dallas, TX). Don't add an address to pages or schema without the owner's explicit confirmation |
+| Address | Footer on every page shows **"Mailing address: 3626 N Hall St, Suite 610, Dallas, TX 75219"** (owner's choice, 2026-11-16). It's a virtual office, so it is deliberately **not** in the structured data and not linked to a map. Keep it that way unless the owner confirms a staffed location |
 | Canonical schema entity | `https://rightchoicelocksmithdallas.com/#locksmith` |
 | Services (pages) | Residential, Commercial, Automotive, Emergency, Rekey, Lock Change & Replacement, Car Key Replacement, Key Fob Programming |
 | City pages today | Dallas, Fort Worth, Plano, Allen, Frisco, Irving |
@@ -45,6 +45,7 @@ When the owner gives a new fact (hours, a social URL, a new service), update thi
 - Plain static HTML/CSS/JS. **No build step, no framework, no package.json.** What's in the repo is what's served.
 - Hosting: **Vercel**, assumed to deploy automatically when `main` is pushed to `github.com/oraanlevi/right-choice-locksmith`. Confirmed: the live site is served by Vercel and matches this repo. *Not yet confirmed:* the Git integration and the plan tier. Ask the owner to confirm in the Vercel dashboard.
 - `vercel.json` has one 308 redirect: `/pages/privacy.html` → `/privacy`.
+- If a push doesn't go live within a couple of minutes, Vercel may have missed it (happened 2026-11-16). Fix: Vercel → Deployments → ⋯ → Create Deployment → `main` → Deploy to Production (only with the owner's approval).
 - DNS is at GoDaddy. Don't touch it.
 
 ```
