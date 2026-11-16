@@ -4,3 +4,6 @@ CLAUDE.md
 maintenance
 client-uploads
 .gitignore
+# Unused logo masters: kept in the repo as source files, not served on the site
+assets/images/logo-original.png
+assets/images/logo-original1.png

@@ -103,7 +103,7 @@ There are no includes, so a change to a shared block must be repeated in every f
   - No `AggregateRating` or `Review` markup for the business itself. Google ignores self-served review stars, and it risks a manual action.
   - `sameAs` only with URLs the owner has confirmed (Facebook, Google Business Profile).
 - **Internal links:** every new page links to at least 3 relevant existing pages and is linked from at least 2. Use descriptive anchor text, not "click here".
-- **Sitemap:** add every new indexable page to `sitemap.xml` and `pages/sitemap.html`.
+- **Sitemap:** add every new indexable page to `sitemap.xml` and `pages/sitemap.html`. When a page's content changes, set its `<lastmod>` in `sitemap.xml` to the date of that change (YYYY-MM-DD).
 - **No doorway pages:** a city page needs real, specific local content (owner-confirmed service facts and local context). If there isn't enough, propose a paragraph on an existing page instead.
 - **Dates:** blog `datePublished` = the day it actually goes live. Never backdate, and never present an old post as new. A real update changes `dateModified` and the visible "Updated <Month YYYY>" line together.
 
